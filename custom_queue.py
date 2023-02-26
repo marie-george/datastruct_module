@@ -19,20 +19,14 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
-queue = Queue()
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
+# queue = Queue()
+# queue.enqueue('data1')
+# queue.enqueue('data2')
+# queue.enqueue('data3')
+#
+# print(queue.head.data)
+# print(queue.head.next_node.data)
+# print(queue.tail.data)
+# print(queue.tail.next_node)
+# print(queue.tail.next_node.data)
 
-print(queue.head.data)
-print(queue.head.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
-print(queue.tail.next_node.data)
-
-# Результаты вывода в консоли
-# data1
-# data2
-# data3
-# None
-# AttributeError: 'NoneType' object has no attribute 'data'
