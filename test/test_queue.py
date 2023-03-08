@@ -10,6 +10,7 @@ class TestNode(unittest.TestCase):
         self.assertEqual(n1.data, 5)
         self.assertEqual(n1.next_node, None)
 
+
 class TestQueue(unittest.TestCase):
 
     def test_enqueue(self):
@@ -23,4 +24,15 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.tail.next_node, None)
         with self.assertRaises(AttributeError):
             queue.tail.next_node.data()
+
+    def test_dequeue(self):
+        queue = Queue()
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        queue.enqueue('data3')
+        self.assertEqual(queue.dequeue(), 'data1')
+        self.assertEqual(queue.dequeue(), 'data2')
+        self.assertEqual(queue.dequeue(), 'data3')
+        self.assertEqual(queue.dequeue(), None)
+
 
