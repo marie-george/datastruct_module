@@ -46,6 +46,7 @@ class LinkedList:
 
         ll_string += 'None'
         print(ll_string)
+        return ll_string
 
 
 ll = LinkedList()
@@ -54,3 +55,4 @@ ll.insert_at_end({'id': 2})
 ll.insert_at_end({'id': 3})
 ll.insert_beginning({'id': 0})
 ll.print_ll()
+
