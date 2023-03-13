@@ -48,11 +48,35 @@ class LinkedList:
         print(ll_string)
         return ll_string
 
+    def to_list(self):
+        """возвращает список с данными, содержащимися в односвязном списке"""
+        list_of_contents = []
+        current = self.head
+        while current is not None:
+            list_of_contents.append(current.data)
+            current = current.next
+        return list_of_contents
+
+    def get_data_by_id(self, id):
+        """возвращает первый найденный в LinkedList словарь с ключом id, значение которого равно переданному в метод значению"""
+        list_of_contents = self.to_list()
+        for item in list_of_contents:
+            try:
+                if type(item) == dict:
+                    if item['id'] == id:
+                        return item
+                else:
+                    raise Exception
+            except Exception:
+                print('Данные не являются словарем или в словаре нет id')
+
 
 ll = LinkedList()
-ll.insert_beginning({'id': 1})
-ll.insert_at_end({'id': 2})
-ll.insert_at_end({'id': 3})
-ll.insert_beginning({'id': 0})
-ll.print_ll()
+ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+ll.insert_at_end('idusername')
+ll.insert_at_end([1, 2, 3])
+ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
+
+user_data = ll.get_data_by_id(2)
+print(user_data)
 
